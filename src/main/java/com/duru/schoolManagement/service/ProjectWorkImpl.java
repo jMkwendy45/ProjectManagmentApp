@@ -94,7 +94,6 @@ public class ProjectWorkImpl implements ProjectWorkService {
                 projectWorkRepository.save(projectToBeBooked.get());
             }
                 else {
-
                 System.out.println(" igot here---->"+projectToBeBooked.get().getIsAvailable());
                 throw new ProjectAlreadyBookedException("Project has already been booked");
 
@@ -105,6 +104,7 @@ public class ProjectWorkImpl implements ProjectWorkService {
 
     @Override
     public List<ProjectWork> getProjectWorkForSpecificUser(){
+
         return null;
     }
 

@@ -11,13 +11,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class User  implements  UserDetails {
+public class User  {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long userId;
@@ -26,39 +27,10 @@ public class User  implements  UserDetails {
     private String email;
     private String phoneNumber;
     private String password;
-    @ManyToOne(cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
+    @ManyToMany(cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",joinColumns = @JoinColumn(name="userId"),
             inverseJoinColumns=@JoinColumn(name="role_id"))
     @Enumerated
-    private Role role;
+    private Set<Role> role;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.getRoleType().name()));
-    }
-
-    @Override
-    public String getUsername() {
-        return email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
-    }
 }
