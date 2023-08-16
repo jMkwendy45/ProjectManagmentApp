@@ -16,7 +16,7 @@ public interface ProjectWorkService {
      Optional<ProjectWork>getSpecificProject(Long projectId);
      ProjectWork bookProject(Long writersId,Long projectId);
 
-     List<ProjectWork> getProjectWorkForSpecificUser();
+     List<ProjectWork> getProjectWorkForSpecificUser(Long userId);
 
-     List<ProjectWork> getProjectWorkForSpecificWriter();
+     List<ProjectWork> getProjectWorkForSpecificWriter(Long WriterId);
 }

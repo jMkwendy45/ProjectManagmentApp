@@ -103,14 +103,24 @@ public class ProjectWorkImpl implements ProjectWorkService {
     }
 
     @Override
-    public List<ProjectWork> getProjectWorkForSpecificUser(){
-
-        return null;
-    }
-
+    public List<ProjectWork> getProjectWorkForSpecificUser(Long userId){
+                List<ProjectWork> project_works = new ArrayList<>();
+                for (ProjectWork projectWork : getAllProject()) {
+                    if (projectWork.getStudentId().equals(userId)) {
+                        project_works.add(projectWork);
+                    }
+                }
+                return project_works;
+            }
     @Override
-    public List<ProjectWork> getProjectWorkForSpecificWriter() {
-        return null;
+    public List<ProjectWork> getProjectWorkForSpecificWriter(Long writerId) {
+        List<ProjectWork> project_works = new ArrayList<>();
+        for (ProjectWork project_work : getAllProject()) {
+            if (project_work.getWriterId().equals(writerId)) {
+                project_works.add(project_work);
+            }
+        }
+        return project_works;
     }
 
 }
