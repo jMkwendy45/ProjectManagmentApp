@@ -9,11 +9,13 @@ import java.util.List;
 import java.util.Optional;
 @Component
 public interface ProjectWorkService {
+     
      ProjectWorkResponse createProjectProposal (ProjectWorkRequest projectWorkRequest);
      List<ProjectWork> availableProject();
      List<ProjectWork>assignedProject();
      List<ProjectWork>getAllProject();
      Optional<ProjectWork>getSpecificProject(Long projectId);
+
      ProjectWork bookProject(Long writersId,Long projectId);
 
      List<ProjectWork> getProjectWorkForSpecificUser(Long userId);

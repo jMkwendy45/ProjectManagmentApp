@@ -12,7 +12,7 @@ public class ProjectWorkResponse {
     private Long projectId;
     private Long writersId;
     private String projectTopic;
-    private Long budget;
+    private Double budget;
     private String department;
     private LocalDate expectedDate;
     private Boolean isAvailable;

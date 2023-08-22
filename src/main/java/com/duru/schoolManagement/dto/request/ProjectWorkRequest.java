@@ -16,7 +16,7 @@ public class ProjectWorkRequest {
     @NotBlank(message = "project topic cannot be blank" )
     private String projectTopic;
     @NotNull(message = "please enter a budget")
-    private Long budget;
+    private Double budget;
     private String department;
     @NotNull(message = "please enter a message")
     @NotBlank(message = "expected date cannot be plank")

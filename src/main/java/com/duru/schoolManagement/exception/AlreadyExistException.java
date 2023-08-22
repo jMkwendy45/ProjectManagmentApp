@@ -1,0 +1,8 @@
+package com.duru.schoolManagement.exception;
+
+public class AlreadyExistException extends RuntimeException {
+    public  AlreadyExistException(String message){
+        super(message);
+
+    }
+}

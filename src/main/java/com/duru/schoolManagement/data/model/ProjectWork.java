@@ -18,7 +18,7 @@ public class ProjectWork {
     private Long studentId;
     private Long writerId;
     private String projectTopic;
-    private Long budget;
+    private  Double budget;
     @NotBlank(message = "department cannot be blank")
     @NotNull(message = "please enter a department")
     private String department;
